@@ -80,11 +80,15 @@ public class HelloController {
             String doc = "doctor";
             if(doc.equals(role_of_user)){
                 System.out.println("in doc case");
-                Parent root = load(getClass().getResource("doc-page.fxml"));
-                stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+                try{
+                root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
 
             }else {
                 System.out.println("not equal to doc");
