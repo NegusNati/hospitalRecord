@@ -2,10 +2,20 @@ package com.example.hospitalrecord;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class HelloController {
+private Stage stage;
+private Scene scene;
+private Parent root;
 
     @FXML
     private Button btn_admin;
@@ -32,13 +42,21 @@ public class HelloController {
     private Label lable1;
 
     @FXML
-    void admin(ActionEvent event) {
-
+    void admin(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("admin-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void doc(ActionEvent event) {
-
+    void doc(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("doc-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

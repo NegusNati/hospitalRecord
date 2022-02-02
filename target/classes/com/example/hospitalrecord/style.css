@@ -1,0 +1,18 @@
+.root {
+
+     -fx-background-color: linear-gradient(
+       from 0% 0% to 100% 200%,
+       repeat,
+       #fbeee6 0%,
+       #cde0c9 50%
+     );
+     -fx-font-family: "Lucida Console";
+}
+.label1 {
+
+  -fx-padding: -2px;
+  -fx-start-margin: 2px;
+  -fx-end-margin: 2px;
+  -fx-font-family: "impact";
+
+}
