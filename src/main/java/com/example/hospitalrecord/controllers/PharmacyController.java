@@ -1,4 +1,4 @@
-package com.example.hospitalrecord;
+package com.example.hospitalrecord.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AdminController {
+public class PharmacyController {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -20,6 +20,7 @@ public class AdminController {
 
     @FXML
     void home(ActionEvent event) throws IOException {
+
         root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

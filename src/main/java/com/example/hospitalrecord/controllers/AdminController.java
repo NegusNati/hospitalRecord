@@ -1,4 +1,4 @@
-package com.example.hospitalrecord;
+package com.example.hospitalrecord.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LabratoryController {
+public class AdminController {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -25,7 +25,6 @@ public class LabratoryController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
 }

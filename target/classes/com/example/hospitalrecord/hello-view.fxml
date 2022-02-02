@@ -2,28 +2,36 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="770.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalrecord.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="770.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalrecord.controllers.HelloController">
    <children>
-      <Label fx:id="lable1" layoutX="239.0" layoutY="41.0" text="Hospital Record Management System">
+      <AnchorPane fx:id="anc_a" layoutX="240.0" layoutY="61.0" prefHeight="335.0" prefWidth="253.0" stylesheets="@style.css">
+         <children>
+            <Label fx:id="log" alignment="CENTER" layoutX="48.0" layoutY="39.0" prefHeight="47.0" prefWidth="140.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="42.0" />
+               </font>
+            </Label>
+            <TextField fx:id="user_name" layoutX="27.0" layoutY="143.0" prefHeight="32.0" prefWidth="200.0" promptText="USER NAME">
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="password" layoutX="27.0" layoutY="200.0" prefHeight="32.0" prefWidth="200.0" promptText="PASSWORD">
+               <font>
+                  <Font name="SansSerif Bold" size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="login_btn" layoutX="69.0" layoutY="264.0" mnemonicParsing="false" onAction="#login" prefHeight="32.0" prefWidth="98.0" text="LOGIN" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="lable1" alignment="CENTER" layoutX="122.0" layoutY="20.0" prefHeight="41.0" prefWidth="527.0" text="Hospital Record Management System">
          <font>
             <Font name="Bodoni MT Poster Compressed" size="28.0" />
          </font>
       </Label>
-      <VBox layoutX="590.0" layoutY="61.0" prefHeight="292.0" prefWidth="129.0">
-         <children>
-            <Button fx:id="btn_doc" mnemonicParsing="false" onAction="#doc" prefHeight="42.0" prefWidth="132.0" text="DOCTOR" />
-            <Button fx:id="btn_admin" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#admin" prefHeight="41.0" prefWidth="130.0" text="ADMINSTRATION" />
-            <Button fx:id="btn_rec" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#record" prefHeight="42.0" prefWidth="129.0" text="RECORD OFFICE" />
-            <Button fx:id="btn_pharma" layoutX="10.0" layoutY="94.0" mnemonicParsing="false" onAction="#pharma" prefHeight="42.0" prefWidth="139.0" text="PHARMACY" />
-            <Button fx:id="btn_lab" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" onAction="#lab" prefHeight="42.0" prefWidth="133.0" text="LABRATORY" />
-            <Button fx:id="btn_nurse" layoutX="10.0" layoutY="178.0" mnemonicParsing="false" onAction="#nurse" prefHeight="42.0" prefWidth="131.0" text="NURSE" />
-            <Button fx:id="btn_patient" layoutX="10.0" layoutY="220.0" mnemonicParsing="false" onAction="#patient" prefHeight="44.0" prefWidth="128.0" text="PATIENT" />
-         </children>
-      </VBox>
    </children>
 </AnchorPane>
