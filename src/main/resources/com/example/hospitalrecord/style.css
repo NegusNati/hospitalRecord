@@ -8,3 +8,11 @@
      );
      -fx-font-family: "Lucida Console";
 }
+.label1 {
+
+  -fx-padding: -2px;
+  -fx-start-margin: 2px;
+  -fx-end-margin: 2px;
+  -fx-font-family: "impact";
+
+}
