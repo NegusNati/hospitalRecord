@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PharmacyController {
+public class LabratoryController {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -20,12 +20,12 @@ public class PharmacyController {
 
     @FXML
     void home(ActionEvent event) throws IOException {
-
         root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
 
 }

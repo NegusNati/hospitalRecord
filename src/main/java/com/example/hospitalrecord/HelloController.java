@@ -60,8 +60,12 @@ private Parent root;
     }
 
     @FXML
-    void lab(ActionEvent event) {
-
+    void lab(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("lab-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -75,8 +79,12 @@ private Parent root;
     }
 
     @FXML
-    void pharma(ActionEvent event) {
-
+    void pharma(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("pharma-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
