@@ -13,7 +13,7 @@
             <Font name="Arial Bold" size="20.0" />
          </font></Label>
       <Button fx:id="btn_home" layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#home" text="BACK" />
-      <VBox layoutX="380.0" layoutY="76.0" prefHeight="156.0" prefWidth="164.0">
+      <VBox layoutX="379.0" layoutY="77.0" prefHeight="156.0" prefWidth="164.0">
          <children>
             <Button fx:id="view_patient" mnemonicParsing="false" onAction="#viewPatient" prefHeight="55.0" prefWidth="164.0" text="VIIEW PATINET STATUS" />
             <Button fx:id="edit_patient" mnemonicParsing="false" onAction="#editPatient" prefHeight="61.0" prefWidth="164.0" text="EDIT PATIENT STATUS" />

@@ -20,10 +20,13 @@ public class PharmacyController {
     private Button btn_home;
 
     @FXML
-    private Button doc;
+    private Button edit;
 
     @FXML
-    void doc(ActionEvent event) {
+    private Button patient;
+
+    @FXML
+    void edit(ActionEvent event) {
 
     }
 
@@ -35,6 +38,12 @@ public class PharmacyController {
         stage.setTitle("HOSPITAL RECORD MANAGEMENT SYSTEM ");
         stage.setScene(scene);
         stage.show();
+
+    }
+
+    @FXML
+    void patient(ActionEvent event) {
+
     }
 
 }

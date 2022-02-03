@@ -7,12 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalrecord.controllers.LabratoryController">
    <children>
-      <Button fx:id="btn_home" layoutX="282.0" layoutY="328.0" mnemonicParsing="false" onAction="#home" text="HOME" />
-      <Label layoutX="244.0" layoutY="51.0" text="LABRATORY PAGE" />
-      <VBox layoutX="236.0" layoutY="124.0" prefHeight="103.0" prefWidth="157.0">
+      <Button fx:id="btn_home" layoutX="45.0" layoutY="340.0" mnemonicParsing="false" onAction="#home" text="HOME" />
+      <Label layoutX="79.0" layoutY="75.0" text="LABRATORY PAGE" />
+      <VBox layoutX="324.0" layoutY="123.0" prefHeight="103.0" prefWidth="157.0">
          <children>
-            <Button fx:id="patient" mnemonicParsing="false" onAction="#patient" prefHeight="51.0" prefWidth="157.0" text="VIEW PATIENT" />
-            <Button fx:id="edit" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#edit" prefHeight="51.0" prefWidth="157.0" text="EDIT PATIENT" />
+            <Button fx:id="patient" mnemonicParsing="false" onAction="#patient" prefHeight="51.0" prefWidth="218.0" text="VIEW PATIENT" />
+            <Button fx:id="edit" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#edit" prefHeight="51.0" prefWidth="173.0" text="EDIT PATIENT" />
          </children>
       </VBox>
    </children>

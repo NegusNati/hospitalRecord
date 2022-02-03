@@ -9,25 +9,62 @@
      -fx-font-family: "Libre Baskerville", "sans-serif";
 
 }
+Button{
+-fx-background-color: #4E9EEA;
+  -fx-border: none;
+  -fx-color: white;
+-fx-transition-duration: 0.7s;
+}
+Button:hover {
+   -fx-background-color: #BAE8E8;
+   -fx-color: white;
+   -fx-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+Label{
+
+ -fx-linear-gradient(#141e30, #243b55);
+  -fx-font-family: "Libre Baskerville", "sans-serif";
+-fx-text-align: center;
+-fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 25px;
+
+
+}
+
+
+
 
 #lable1 {
--fx-linear-gradient(#141e30, #243b55);
-
-  -fx-font-family: "Libre Baskerville", "sans-serif";
-
+ -fx-linear-gradient(#141e30, #243b55);
+ -fx-font-family: "Libre Baskerville", "sans-serif";
+-fx-text-align: center;
+-fx-text-decoration: none;
+ -fx-display: inline-block;
+ -fx-font-size: 28px;
 }
-#log{
-
+#login_btn{
+ -fx-background-color: #29DE92;/* /#4CAF50; */
+  -fx-border: none;
+  -fx-color: white;
+  -fx-padding: 10px 20px;
+  -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 15px;
 -fx-font-family: "Libre Baskerville", "sans-serif";
-
-
-}
-#anc_a{
-
-}
-#label_doc{
-
+-fx-border-radius: 8px;
+-fx-border: 2px solid #e7e7e7;
+     -fx-transition-duration: 0.4s;
+      -fx-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 }
+#login_btn:hover {
+   -fx-background-color: #BAE8E8;
+   -fx-color: white;
+   -fx-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
 
 
