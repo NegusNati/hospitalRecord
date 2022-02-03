@@ -1,5 +1,6 @@
 package com.example.hospitalrecord.controllers;
 
+import com.example.hospitalrecord.HospitalRecord;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,8 +48,13 @@ public class HelloController {
     PreparedStatement pst = null;
     ResultSet rs = null;
 
+    void doc_fxml(){
+
+
+    }
+
     @FXML
-    void login(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+    void login(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
       System.out.println(user_name.getText());
         System.out.println(password.getText());
 
@@ -65,6 +71,7 @@ public class HelloController {
         if (user_name.getText().equals("") &&  password.getText().equals("")) {
             a= new Alert(Alert.AlertType.WARNING);
             a.setContentText("PLEASE FILL IN BOTH THE FIELDS !");
+            a.showAndWait();
             user_name.setText("");
             password.setText("");
         }else if(rs.next()){
@@ -80,15 +87,15 @@ public class HelloController {
             String doc = "doctor";
             if(doc.equals(role_of_user)){
                 System.out.println("in doc case");
-                try{
-                root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
+
+
+                    Parent root = load(getClass().getResource("src/main/resources.com.example.hospitalrecord.doc-page.fxml"));
+                    System.out.println("in doc case");
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+
 
             }else {
                 System.out.println("not equal to doc");
