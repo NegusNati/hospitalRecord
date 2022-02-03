@@ -7,14 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 
 public class HospitalRecord extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        Scene scene = new Scene(root);
-        stage.setTitle("HOME PAGE!");
+        FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle(" HOSPITAL RECORD MANAGMENT SYSTEM");
         stage.setScene(scene);
         stage.show();
     }

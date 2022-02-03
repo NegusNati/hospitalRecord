@@ -4,21 +4,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class PharmacyController {
+public class NurseController {
 
     @FXML
-    private Button btn_home;
+    private Button login;
 
     @FXML
-    private Button doc;
+    private Button patient;
 
     @FXML
-    void doc(ActionEvent event) {
+    void login(ActionEvent event) {
 
     }
 
     @FXML
-    void home(ActionEvent event) {
+    void patient(ActionEvent event) {
 
     }
 

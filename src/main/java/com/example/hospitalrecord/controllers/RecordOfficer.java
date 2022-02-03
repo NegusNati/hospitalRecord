@@ -4,16 +4,24 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class LabratoryController {
+public class RecordOfficer {
 
     @FXML
-    private Button btn_home;
+    private Button add;
+
+    @FXML
+    private Button back;
 
     @FXML
     private Button edit;
 
     @FXML
-    private Button patient;
+    private Button retrive;
+
+    @FXML
+    void add(ActionEvent event) {
+
+    }
 
     @FXML
     void edit(ActionEvent event) {
@@ -26,9 +34,8 @@ public class LabratoryController {
     }
 
     @FXML
-    void patient(ActionEvent event) {
+    void retrive(ActionEvent event) {
 
     }
 
 }
-

@@ -15,10 +15,26 @@ public class DoctorController {
     private Button btn_home;
 
     @FXML
+    private Button edit_patient;
+
+    @FXML
     private Label label_doc;
 
     @FXML
+    private Button view_patient;
+
+    @FXML
+    void editPatient(ActionEvent event) {
+
+    }
+
+    @FXML
     void home(ActionEvent event) {
+
+    }
+
+    @FXML
+    void viewPatient(ActionEvent event) {
 
     }
 
