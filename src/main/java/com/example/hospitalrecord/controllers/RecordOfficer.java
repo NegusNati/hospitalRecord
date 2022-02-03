@@ -1,27 +1,32 @@
 package com.example.hospitalrecord.controllers;
 
+import com.example.hospitalrecord.HospitalRecord;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class RecordOfficer {
-
-    @FXML
-    private Button add;
-
-    @FXML
-    private Button back;
-
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
     @FXML
     private Button edit;
 
     @FXML
-    private Button retrive;
+    private Button home;
 
     @FXML
-    void add(ActionEvent event) {
+    private Button reg;
 
-    }
+    @FXML
+    private Button retrive;
 
     @FXML
     void edit(ActionEvent event) {
@@ -29,7 +34,18 @@ public class RecordOfficer {
     }
 
     @FXML
-    void home(ActionEvent event) {
+    void home(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("hello-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("HOSPITAL RECORD MANAGEMENT SYSTEM ");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    @FXML
+    void register(ActionEvent event) {
 
     }
 

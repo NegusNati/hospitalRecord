@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalrecord.controllers.RecordOfficer">
+   <children>
+      <Label layoutX="272.0" layoutY="29.0" text="RECORD OFFICE " />
+      <VBox layoutX="214.0" layoutY="75.0" prefHeight="168.0" prefWidth="173.0">
+         <children>
+            <Button fx:id="reg" mnemonicParsing="false" onAction="#register" prefHeight="56.0" prefWidth="173.0" text="REGISTER PATIENT" />
+            <Button fx:id="retrive" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#retrive" prefHeight="56.0" prefWidth="173.0" text="RETRIVE PATIENT DATA" />
+            <Button fx:id="edit" layoutX="10.0" layoutY="66.0" mnemonicParsing="false" onAction="#edit" prefHeight="56.0" prefWidth="173.0" text="EDIT PATIENT STATUS" />
+         </children>
+      </VBox>
+      <Button fx:id="home" layoutX="50.0" layoutY="347.0" mnemonicParsing="false" onAction="#home" text="BACK" />
+   </children>
+</AnchorPane>
