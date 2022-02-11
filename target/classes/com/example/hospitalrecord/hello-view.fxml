@@ -12,20 +12,23 @@
          <children>
             <Label fx:id="log" alignment="CENTER" layoutX="48.0" layoutY="39.0" prefHeight="47.0" prefWidth="140.0" text="Login" textFill="WHITE">
                <font>
-                  <Font name="Berlin Sans FB Bold" size="42.0" />
+                  <Font name="Berlin Sans FB Bold" size="49.0" />
                </font>
             </Label>
-            <TextField fx:id="user_name" layoutX="27.0" layoutY="143.0" prefHeight="32.0" prefWidth="200.0" promptText="USER NAME">
+            <TextField fx:id="user_name" focusTraversable="false" layoutX="27.0" layoutY="143.0" opacity="0.84" prefHeight="32.0" prefWidth="200.0" promptText="USER NAME">
                <font>
                   <Font name="SansSerif Bold" size="13.0" />
                </font>
             </TextField>
-            <TextField fx:id="password" layoutX="27.0" layoutY="200.0" prefHeight="32.0" prefWidth="200.0" promptText="PASSWORD">
+            <TextField fx:id="password" focusTraversable="false" layoutX="27.0" layoutY="200.0" opacity="0.84" prefHeight="32.0" prefWidth="200.0" promptText="PASSWORD">
                <font>
                   <Font name="SansSerif Bold" size="13.0" />
                </font>
             </TextField>
-            <Button fx:id="login_btn" layoutX="78.0" layoutY="265.0" mnemonicParsing="false" onAction="#login" prefHeight="32.0" prefWidth="98.0" text="LOGIN" />
+            <Button fx:id="login_btn" layoutX="59.0" layoutY="272.0" mnemonicParsing="false" onAction="#login" prefHeight="41.0" prefWidth="118.0" text="Submit">
+               <font>
+                  <Font size="21.0" />
+               </font></Button>
          </children>
       </AnchorPane>
       <Label fx:id="lable1" alignment="CENTER" layoutX="122.0" layoutY="20.0" prefHeight="41.0" prefWidth="527.0" text="Hospital Record Management System">

@@ -9,6 +9,9 @@
      -fx-font-family: "Libre Baskerville", "sans-serif";
 
 }
+
+
+
 Button{
 -fx-background-color: #4E9EEA;
   -fx-border: none;
@@ -18,7 +21,7 @@ Button{
 Button:hover {
    -fx-background-color: #BAE8E8;
    -fx-color: white;
-   -fx-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   -fx-box-shadow: 0 12px 16px ;
 }
 Label{
 
@@ -28,7 +31,6 @@ Label{
 -fx-text-decoration: none;
   -fx-display: inline-block;
   -fx-font-size: 25px;
-
 
 }
 
@@ -54,15 +56,15 @@ Label{
   -fx-font-size: 15px;
 -fx-font-family: "Libre Baskerville", "sans-serif";
 -fx-border-radius: 8px;
--fx-border: 2px solid #e7e7e7;
-     -fx-transition-duration: 0.4s;
-      -fx-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 }
 #login_btn:hover {
    -fx-background-color: #BAE8E8;
    -fx-color: white;
-   -fx-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   -fx-box-shadow:  12px 16px ;
+   -fx-border-width: 2px;
+   -fx-border-style: solid;
+   -fx-border-color: white;
 }
 
 
