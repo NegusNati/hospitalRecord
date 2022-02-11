@@ -56,8 +56,13 @@ public class RecordOfficer {
     }
 
     @FXML
-    void retrive(ActionEvent event) {
-
+    void retrive(ActionEvent event) throws IOException {
+        FXMLLoader fx = new FXMLLoader(HospitalRecord.class.getResource("patient-table-page.fxml"));
+        stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fx.load());
+        stage.setTitle("ADMISSION PAGE");
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
