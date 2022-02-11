@@ -5,6 +5,7 @@ module com.example.hospitalrecord {
     requires org.kordamp.bootstrapfx.core;
     requires ojdbc14;
     requires java.sql;
+    requires java.desktop;
 
     exports com.example.hospitalrecord.controllers;
     opens com.example.hospitalrecord.controllers to javafx.fxml;

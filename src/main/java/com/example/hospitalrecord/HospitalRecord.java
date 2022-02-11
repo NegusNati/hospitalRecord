@@ -7,10 +7,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 
 public class HospitalRecord extends Application {
+
+    public static String dateMain;
+    public static String timeMain;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("hello-view.fxml"));
@@ -20,7 +28,20 @@ public class HospitalRecord extends Application {
         stage.show();
     }
 
+
+
     public static void main(String[] args) {
+        Date date = new Date();
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
+        System.out.println(java.time.LocalDate.now());
+        dateMain = String.valueOf(java.time.LocalDate.now());
+        SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm aa");
+        String time = formatTime.format(
+                date);
+        System.out.println(time);
+        timeMain = time;
+
         launch(args);
+
     }
 }

@@ -96,7 +96,7 @@ public class HelloController {
             }else { //IF THERE IS NO USER LIKE THAT OR JUST ONE FIELD IS INCORRECT
                 System.out.println("no privilage");}} else {
                         a = new Alert(Alert.AlertType.WARNING);
-                        a.setContentText("INCORRECT USER NAME OR PASSWORD");
+                        a.setContentText("INCORRECT USER NAME OR PASSWORD, PLEASE USE LOWERCASE CHARACTERS ");
                         a.showAndWait();
                         user_name.setText("");
                         password.setText("");

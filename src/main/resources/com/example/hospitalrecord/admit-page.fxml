@@ -36,7 +36,7 @@
             <HBox layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="495.0">
                <children>
                   <TextField fx:id="contactNumber" prefHeight="38.0" prefWidth="250.0" promptText="Contact-Number" />
-                  <TextField fx:id="contactNumber1" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="250.0" promptText="Contact-Number" />
+                  <TextField fx:id="moneyDue" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="250.0" promptText="Money-Due" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="495.0">
