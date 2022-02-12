@@ -64,7 +64,7 @@ public class PatientTable implements Initializable {
 
     @FXML
     void back(ActionEvent event) throws IOException {
-        FXMLLoader fxmlBack = new FXMLLoader(HospitalRecord.class.getResource("record-page.fxml"));
+        FXMLLoader fxmlBack = new FXMLLoader(HospitalRecord.class.getResource("hello-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlBack.load());
         stage.setTitle(" RECORD OFFICE PAGE ");

@@ -33,7 +33,13 @@ public class NurseController {
     }
 
     @FXML
-    void patient(ActionEvent event) {
+    void patient(ActionEvent event) throws IOException {
+        FXMLLoader ff = new FXMLLoader(HospitalRecord.class.getResource("patient-table-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(ff.load(),1100,600);
+        stage.setTitle("PATIENT DETAIL TABLE PAGE");
+        stage.setScene(scene);
+        stage.show();
 
     }
 
