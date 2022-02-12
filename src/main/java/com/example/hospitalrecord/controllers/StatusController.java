@@ -48,23 +48,29 @@ public class StatusController {
             System.out.println(toTheTextArea);
             textArea.setText(toTheTextArea);
         } else {
-            textArea.setText(" THE IS NO SUCH PATIENT IN THE RECORD");
+            textArea.setText("");
+            a = new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText(" THERE IS NO SUCH PATIENT IN THE HOSPITAL RECORD" );
+            a.showAndWait();
+
         }
 
     }else {
+            textArea.setText("");
             a = new Alert(Alert.AlertType.INFORMATION);
             a.setContentText(" PLEASE FILL IN THE ID SPACE " );
             a.showAndWait();
+
         }
 
     }
     @FXML
     void back(ActionEvent event) throws IOException {
 
-        FXMLLoader fx = new FXMLLoader(HospitalRecord.class.getResource("record-page.fxml"));
+        FXMLLoader fx = new FXMLLoader(HospitalRecord.class.getResource("hello-view.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fx.load());
-        stage.setTitle(" RECORD OFFICE PAGE ");
+        stage.setTitle(" HOSPITAL RECORD MANAGEMENT SYSTEM ");
         stage.setScene(scene);
         stage.show();
     }
@@ -82,7 +88,7 @@ public class StatusController {
         PreparedStatement ptst = con.prepareStatement(updateStatus);
         ptst.execute();
         textField.setText("");
-        textField.setText("");
+        textArea.setText("");
         a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText(" SUCCESSFULLY UPDATED " );
         a.showAndWait();}else{
@@ -90,6 +96,7 @@ public class StatusController {
             a = new Alert(Alert.AlertType.INFORMATION);
             a.setContentText(" PLEASE FILL IN THE ID SPACE " );
             a.showAndWait();
+            textArea.setText("");
         }
 
     }

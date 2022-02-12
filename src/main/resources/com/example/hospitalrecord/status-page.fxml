@@ -10,7 +10,7 @@
    <children>
       <TextArea fx:id="textArea" layoutX="21.0" layoutY="123.0" prefHeight="155.0" prefWidth="558.0" promptText="Status of Patient" />
       <Button layoutX="495.0" layoutY="337.0" mnemonicParsing="false" onAction="#update" text="UPDATE" />
-      <Button fx:id="ba" layoutX="39.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="60.0" text="BACK" />
+      <Button fx:id="ba" layoutX="39.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="60.0" text="HOME" />
       <Label layoutX="159.0" layoutY="20.0" text="EDIT STATUS OF PATIENT" />
       <TextField fx:id="textField" layoutX="21.0" layoutY="82.0" prefHeight="25.0" prefWidth="189.0" promptText="Search Patient ID" />
       <Button layoutX="218.0" layoutY="82.0" mnemonicParsing="false" onAction="#search" text="search" />
