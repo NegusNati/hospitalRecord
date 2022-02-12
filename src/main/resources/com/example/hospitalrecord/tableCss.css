@@ -1,0 +1,23 @@
+.root {
+
+     -fx-background-color: linear-gradient(
+       from 0% 0% to 100% 200%,
+       repeat,
+       #00BBF0 0%,
+       #BAE8E8 50%
+     );
+     -fx-font-family: "Libre Baskerville", "sans-serif";
+
+}
+
+Button{
+-fx-background-color: #4E9EEA;
+  -fx-border: none;
+  -fx-color: white;
+-fx-transition-duration: 0.7s;
+}
+Button:hover {
+   -fx-background-color: #F0FFF3;
+   -fx-color: white;
+   -fx-box-shadow: 0 12px 16px ;
+}

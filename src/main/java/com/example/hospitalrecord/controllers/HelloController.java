@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.Locale;
 import java.util.Objects;
 
 public class HelloController {
@@ -54,8 +55,8 @@ public class HelloController {
         System.out.println("AFTER CONNECTION IS CREATED");
         String query = "select * from LOGIN_ROLE where USER_NAME=? and PASSWORD=?"; // THE SELECT QUERY
         pst = con.prepareStatement(query);
-        pst.setString(1, user_name.getText());
-        pst.setString(2, password.getText());
+        pst.setString(1, user_name.getText().toLowerCase());
+        pst.setString(2, password.getText().toLowerCase());
         rs = pst.executeQuery(); //QUERY EXECUTION
         System.out.println(password.getText());
         if (user_name.getText().equals("") && password.getText().equals("")) { //IF NO INPUT IS DETECTED
@@ -96,7 +97,7 @@ public class HelloController {
             }else { //IF THERE IS NO USER LIKE THAT OR JUST ONE FIELD IS INCORRECT
                 System.out.println("no privilage");}} else {
                         a = new Alert(Alert.AlertType.WARNING);
-                        a.setContentText("INCORRECT USER NAME OR PASSWORD, PLEASE USE LOWERCASE CHARACTERS ");
+                        a.setContentText(" INCORRECT USER NAME OR/AND PASSWORD ");
                         a.showAndWait();
                         user_name.setText("");
                         password.setText("");
