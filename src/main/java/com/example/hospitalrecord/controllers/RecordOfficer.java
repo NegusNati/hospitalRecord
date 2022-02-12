@@ -65,6 +65,7 @@ public class RecordOfficer {
         FXMLLoader fx = new FXMLLoader(HospitalRecord.class.getResource("patient-table-page.fxml"));
         stage =(Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fx.load(),1100,600);
+        stage.setResizable(false);
         stage.setTitle("PATIENT DETAIL TABLE PAGE");
         stage.setScene(scene);
         stage.show();
