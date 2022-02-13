@@ -16,34 +16,22 @@ public class AdminController {
     private Parent root;
     private Stage stage;
     private Scene scene;
+
+
+    @FXML
+    private Button add;
+
     @FXML
     private Button btn_home;
 
     @FXML
-    private Button doc;
+    private Button edit;
 
     @FXML
-    private Button lab;
+    private Button view;
 
     @FXML
-    private Button nurse;
-
-    @FXML
-    private Button other;
-
-    @FXML
-    private Button patient;
-
-    @FXML
-    private Button pharma;
-
-    @FXML
-    private Button record;
-
-    @FXML
-    void doc(ActionEvent event) {
-
-    }
+    private Button viewp;
 
     @FXML
     void home(ActionEvent event) throws IOException {
@@ -56,33 +44,30 @@ public class AdminController {
 
     }
 
-    @FXML
-    void lab(ActionEvent event) {
+   @FXML
+    void addEmp(ActionEvent event) throws IOException {
+       FXMLLoader fx = new FXMLLoader(HospitalRecord.class.getResource("addEmp-page.fxml"));
+       stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+       Scene scene = new Scene(fx.load());
+       stage.setTitle("ADD EMPLOYEE PAGE");
+       stage.setScene(scene);
+       stage.show();
 
     }
 
     @FXML
-    void nurse(ActionEvent event) {
+    void editEmp(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void viewEmp(ActionEvent event) {
 
     }
 
     @FXML
-    void other(ActionEvent event) {
-
-    }
-
-    @FXML
-    void patient(ActionEvent event) {
-
-    }
-
-    @FXML
-    void pharma(ActionEvent event) {
-
-    }
-
-    @FXML
-    void record(ActionEvent event) {
+    void viewPatient(ActionEvent event) {
 
     }
 

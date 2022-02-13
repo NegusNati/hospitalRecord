@@ -13,20 +13,12 @@
          <children>
             <VBox prefHeight="190.0" prefWidth="167.0">
                <children>
-                  <Button fx:id="lab" mnemonicParsing="false" onAction="#lab" prefHeight="49.0" prefWidth="185.0" text="LAB TECHNICIANS" />
-                  <Button fx:id="patient" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#patient" prefHeight="48.0" prefWidth="187.0" text="PATIENT" />
-                  <Button fx:id="other" layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#other" prefHeight="47.0" prefWidth="185.0" text="OTHER EMPLOYEES" />
-                  <Button layoutX="10.0" layoutY="108.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="175.0" text="Button" />
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#addEmp" prefHeight="49.0" prefWidth="185.0" text="ADD EMPLOYEES" />
+                  <Button fx:id="edit" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#editEmp" prefHeight="48.0" prefWidth="187.0" text="EDIT/FIRE EMPLOYEES" />
+                  <Button fx:id="view" layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#viewEmp" prefHeight="47.0" prefWidth="185.0" text="VIEW EMPLOYEE DATA" />
+                  <Button fx:id="viewp" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#viewPatient" prefHeight="47.0" prefWidth="175.0" text="VIEW PATIENT " />
                </children>
             </VBox>
-         </children>
-      </VBox>
-      <VBox layoutX="133.0" layoutY="105.0" prefHeight="190.0" prefWidth="167.0">
-         <children>
-            <Button fx:id="doc" mnemonicParsing="false" onAction="#doc" prefHeight="47.0" prefWidth="208.0" text="DOCTORS" />
-            <Button fx:id="nurse" mnemonicParsing="false" onAction="#nurse" prefHeight="46.0" prefWidth="176.0" text="NURSES" />
-            <Button fx:id="record" layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#record" prefHeight="47.0" prefWidth="178.0" text="RECORD OFFICERS" />
-            <Button fx:id="pharma" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#pharma" prefHeight="51.0" prefWidth="178.0" text="PHARMACISTS" />
          </children>
       </VBox>
    </children>
