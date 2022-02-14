@@ -7,14 +7,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalrecord.controllers.AdminController">
    <children>
-      <Label layoutX="172.0" layoutY="25.0" prefHeight="36.0" prefWidth="300.0" text="ADMINSTRATION PAGE" />
+      <Label layoutX="106.0" layoutY="28.0" prefHeight="36.0" prefWidth="300.0" text="ADMINSTRATION PAGE" />
       <Button fx:id="btn_home" layoutX="35.0" layoutY="339.0" mnemonicParsing="false" onAction="#home" text="BACK" />
       <VBox layoutX="322.0" layoutY="105.0" prefHeight="190.0" prefWidth="167.0">
          <children>
             <VBox prefHeight="190.0" prefWidth="167.0">
                <children>
                   <Button fx:id="add" mnemonicParsing="false" onAction="#addEmp" prefHeight="49.0" prefWidth="185.0" text="ADD EMPLOYEES" />
-                  <Button fx:id="edit" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#editEmp" prefHeight="48.0" prefWidth="187.0" text="EDIT/FIRE EMPLOYEES" />
+                  <Button fx:id="edit" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#editEmp" prefHeight="48.0" prefWidth="187.0" text="EDIT EMPLOYEES" />
                   <Button fx:id="view" layoutX="10.0" layoutY="59.0" mnemonicParsing="false" onAction="#viewEmp" prefHeight="47.0" prefWidth="185.0" text="VIEW EMPLOYEE DATA" />
                   <Button fx:id="viewp" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#viewPatient" prefHeight="47.0" prefWidth="175.0" text="VIEW PATIENT " />
                </children>

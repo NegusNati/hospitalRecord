@@ -1,29 +1,24 @@
-package com.example.hospitalrecord;
+package com.example.hospitalrecord.controllers;
 
+import com.example.hospitalrecord.HospitalRecord;
 import com.example.hospitalrecord.controllers.Jdbc;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.*;
-import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
-import static com.example.hospitalrecord.HospitalRecord.dateMain;
 
 
-public class addEmpController implements Initializable {
+public class EditEmpController {
     private Scene scene;
     private Stage stage;
     Connection con = null;
@@ -34,9 +29,6 @@ public class addEmpController implements Initializable {
     Alert a;
     Alert b;
     @FXML
-    private Button admit;
-
-    @FXML
     private TextField age;
 
     @FXML
@@ -46,10 +38,10 @@ public class addEmpController implements Initializable {
     private Button back;
 
     @FXML
-    private TextField contactNumber;
+    private Button back1;
 
     @FXML
-    private TextField date;
+    private TextField contactNumber;
 
     @FXML
     private TextField email;
@@ -67,58 +59,41 @@ public class addEmpController implements Initializable {
     private TextField role;
 
     @FXML
-    private ComboBox<String> sexComboBox;
+    private TextField salary;
 
     @FXML
     private TextField special;
-    @FXML
-    private TextField salary;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        sexComboBox.setItems(FXCollections.observableArrayList("MALE","FEMALE"));
-        date.setText(dateMain);
-        s = String.valueOf(sexComboBox.getValue());
-    }
 
-    public void addEmpMethod() throws ClassNotFoundException, SQLException {
-        Jdbc database = new Jdbc();// DATABASE CLASS
+    public void updateEmpMethod() throws ClassNotFoundException {
+        try{
+            Jdbc database = new Jdbc();// DATABASE CLASS
         con = database.connMethod(); // CREATING A CONNECTION
         System.out.println("AFTER CONNECTION IS CREATED");
-        String d =dateMain;
+        String dateFromDataBase ="SELECT * FROM EMPLOYEE WHERE EMPLOYEEID ='"+id.getText()+"'";
+        Statement stt = con.createStatement();
+        ResultSet rr = stt.executeQuery(dateFromDataBase);
+            rr.next();
+            String pastDate = rr.getString("DATEOFHIRE");
+            String pastSex = rr.getString("SEX");
+            System.out.println(pastSex);
+
         System.out.println(" date and time ");
-        String sql = "INSERT INTO EMPLOYEE values ( ?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "UPDATE EMPLOYEE SET firstName = '"+firstName.getText()+"',lastName ='"+lastName.getText()+"',sex ='"+pastSex+"',age = '"+age.getText()+"',contactNumber ='"+contactNumber.getText()+"',DATEOFHIRE = '"+pastDate+"',email = '"+email.getText()+"',role ='"+role.getText()+"',SPECIALIZATION ='"+special.getText()+"', AVAILABILITY ='"+availablity.getText()+"',salary ='"+salary.getText()+"' WHERE  EMPLOYEEID= '"+id.getText()+"'";
         PreparedStatement ptst = con.prepareStatement(sql);
-        ptst.setString(1, firstName.getText());
-        ptst.setString(2, lastName.getText());
-        ptst.setString(3, s);
-        ptst.setString(4, age.getText());
-        ptst.setString(5, contactNumber.getText());
-        ptst.setString(6, d);
-        ptst.setString(7, email.getText());
-        ptst.setString(8, role.getText());
-        ptst.setString(9, special.getText());
-        ptst.setString(10, availablity.getText());
-        ptst.setString(11, id.getText());
-        ptst.setString(12, salary.getText());
+
         System.out.println(" before ex ");
 
 // Validation
         String fn = firstName.getText().toString();
         String ln = lastName.getText().toString();
-        String i = id.getText().toString();
         String ag = age.getText().toString();
         String md = email.getText().toString();
-        String sexxx = s;
-
         String cno = contactNumber.getText().toString();
         String sta = availablity.getText().toString();
         String salar = salary.getText().toString();
         b = new Alert(Alert.AlertType.INFORMATION);
 
-        if(i.equals("")){
-            b.setContentText("EMPLOYEE ID IS MANDATORY, PLEASE INSERT AGAIN ");
-            b.showAndWait();}
-        else if(fn.equals("")){
+         if(fn.equals("")){
             b.setContentText("FIRST NAME OF EMPLOYEE IS MANDATORY, PLEASE INSERT AGAIN ");
             b.showAndWait(); }
         else if(ln.equals("")){
@@ -131,8 +106,6 @@ public class addEmpController implements Initializable {
             b.setContentText("CONTACT NUMBER IS MANDATORY, PLEASE INSERT AGAIN");
             b.showAndWait();}
         else if(md.equals("")){
-            email.setText(" NOT PROVIDED ");}
-        else if(s.equals("")){
             email.setText(" NOT PROVIDED ");}
         else if(sta.equals("")){
             availablity.setText(" ACTIVE ");}
@@ -157,29 +130,30 @@ public class addEmpController implements Initializable {
             ptst.executeQuery();
             System.out.println("AFTER ex ");
             a = new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText(" EMPLOYEE DATA INSERTED SUCCESSFULLY!! ");
+            a.setContentText(" EMPLOYEE DATA UPDATED SUCCESSFULLY!! ");
             a.showAndWait();
             con.close();
             firstName.setText(""); lastName.setText(""); id.setText(""); role.setText(""); age.setText("");contactNumber.setText(""); availablity.setText("");
-            salary.setText(""); special.setText(""); email.setText(""); }
+            salary.setText(""); special.setText(""); email.setText(""); }} catch(Exception e){
+            firstName.setText(""); lastName.setText(""); id.setText(""); role.setText(""); age.setText("");contactNumber.setText(""); availablity.setText("");
+            salary.setText(""); special.setText(""); email.setText("");
+            a = new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText(" NO EMPLOYEE DATA WITH THAT ID !! ");
+            a.showAndWait();
+            e.printStackTrace();
+        }
     }
-    @FXML
-    void admit(ActionEvent event) throws SQLException, ClassNotFoundException {
-        addEmpMethod();
-    }
-
     @FXML
     void back(ActionEvent event) throws IOException {
-
-        FXMLLoader fx = new FXMLLoader(HospitalRecord.class.getResource("admin-page.fxml"));
+        FXMLLoader BACK = new FXMLLoader(HospitalRecord.class.getResource("admin-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fx.load());
+        Scene scene = new Scene(BACK.load());
         stage.setTitle("ADMIN PAGE");
         stage.setScene(scene);
         stage.show();
-
-
     }
-
-
+    @FXML
+    void update(ActionEvent event) throws ClassNotFoundException {
+        updateEmpMethod();
+    }
 }

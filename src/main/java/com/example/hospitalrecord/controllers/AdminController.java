@@ -56,13 +56,35 @@ public class AdminController {
     }
 
     @FXML
-    void editEmp(ActionEvent event) {
+    void editEmp(ActionEvent event) throws IOException {
 
+        System.out.println("AFTER CONNECTION IS CREATED");
+        FXMLLoader k = new FXMLLoader(HospitalRecord.class.getResource("editEmp-page.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        System.out.println("AFTER CONNECTION IS CREATED");
+        Scene scene2 = new Scene(k.load());
+        System.out.println("AFTER CONNECTION IS CREATED");
+        stage.setTitle(" UPDATE EMPLOYEE PAGE ");
+        stage.setScene(scene2);
+        stage.show();
+//        FXMLLoader LL = new FXMLLoader(HospitalRecord.class.getResource("editEmp-page.fxml"));
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        Scene scene = new Scene(LL.load());
+//        stage.setTitle(" UPDATE AN EMPLOYEE PAGE ");
+//        stage.setScene(scene);
+//        stage.show();
     }
 
 
     @FXML
-    void viewEmp(ActionEvent event) {
+    void viewEmp(ActionEvent event) throws IOException {
+
+        FXMLLoader fxa = new FXMLLoader(HospitalRecord.class.getResource("empTable-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxa.load());
+        stage.setTitle(" EMPLOYEE RECORD PAGE");
+        stage.setScene(scene);
+        stage.show();
 
     }
 

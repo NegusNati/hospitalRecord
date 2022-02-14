@@ -25,7 +25,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class PatientTable implements Initializable {
@@ -129,8 +128,6 @@ public class PatientTable implements Initializable {
                     if(searchClass.getFname().toLowerCase().indexOf(searchKey) > -1 ){
                         return true;
                     } else if (searchClass.getLname().toLowerCase().indexOf(searchKey) > -1 ){
-                        return true;
-                    }else if (searchClass.getLname().toLowerCase().indexOf(searchKey) > -1 ){
                         return true;
                     }else if (searchClass.getId().toLowerCase().indexOf(searchKey) > -1 ){
                         return true;

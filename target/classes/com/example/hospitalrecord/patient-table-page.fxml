@@ -28,7 +28,7 @@
             <TableColumn id="moneyDue" fx:id="moneyDue" prefWidth="75.0" text="MONEY DUE" />
          </columns>
       </TableView>
-      <Label layoutX="529.0" layoutY="24.0" text="PATIENT DATA">
+      <Label layoutX="529.0" layoutY="24.0" text="PATIENT RECORD">
          <font>
             <Font size="24.0" />
          </font></Label>

@@ -27,6 +27,8 @@ public class searchClass {
         this.modue = modue;
     }
 
+
+
     public String getFname() {
         return fname;
     }
