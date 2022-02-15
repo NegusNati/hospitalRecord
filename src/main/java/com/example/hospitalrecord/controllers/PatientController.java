@@ -41,6 +41,7 @@ public class PatientController {
         FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("docPatient.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
         stage.setTitle(" DOCTOR INFORMATION TABLE ");
         stage.setScene(scene);
         stage.show();

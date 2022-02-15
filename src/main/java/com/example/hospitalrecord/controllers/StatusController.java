@@ -35,17 +35,16 @@ public class StatusController {
 //        String x = textField.getText();
         Jdbc database = new Jdbc();
         String query = "SELECT STATUS FROM PATIENT WHERE ID ='" + textField.getText() + "' ";
-        System.out.println(" before connection ");
+//        System.out.println(" before connection ");
         if(textField.getText().length() > 0){
         Connection con = database.connMethod();
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery(query);
-        System.out.println(" 111111 ");
-
+//        System.out.println(" 111111 ");
         if (rs.next()) {
-            System.out.println("toTheTextArea");
+//            System.out.println("toTheTextArea");
             toTheTextArea = rs.getString("Status");
-            System.out.println(toTheTextArea);
+//            System.out.println(toTheTextArea);
             textArea.setText(toTheTextArea);
         } else {
             textArea.setText("");
@@ -60,7 +59,6 @@ public class StatusController {
             a = new Alert(Alert.AlertType.INFORMATION);
             a.setContentText(" PLEASE FILL IN THE ID SPACE " );
             a.showAndWait();
-
         }
 
     }
@@ -78,10 +76,8 @@ public class StatusController {
     @FXML
     void update(ActionEvent event) throws ClassNotFoundException, SQLException {
 //        String query = "SELECT STATUS FROM PATIENT WHERE ID = '" +textField.getText()+"' ";
-
         Jdbc database = new Jdbc();
         Connection con = database.connMethod();
-
 
         String updateStatus = "UPDATE PATIENT SET STATUS = '" +textArea.getText()+"' WHERE ID ='"+textField.getText()+"' ";
         if(textField.getText().length() > 0){

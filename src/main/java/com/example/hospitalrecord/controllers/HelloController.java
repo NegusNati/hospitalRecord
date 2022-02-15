@@ -7,14 +7,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.Locale;
 import java.util.Objects;
@@ -49,16 +52,26 @@ public class HelloController {
     @FXML
     private TextField user_name;
 
+
+    @FXML
+    private Hyperlink negusn;
+
+    @FXML
+    void hyper(ActionEvent event) throws URISyntaxException, IOException {
+
+        Desktop.getDesktop().browse(new URI("https://github.com/NegusNati/hospitalRecord.git"));
+    }
+
     void let() throws ClassNotFoundException, SQLException {
         Jdbc database = new Jdbc();// DATABASE CLASS
         con = database.connMethod(); // CREATING A CONNECTION
-        System.out.println("AFTER CONNECTION IS CREATED");
+//        System.out.println("AFTER CONNECTION IS CREATED");
         String query = "select * from LOGIN_ROLE where USER_NAME=? and PASSWORD=?"; // THE SELECT QUERY
         pst = con.prepareStatement(query);
         pst.setString(1, user_name.getText().toLowerCase());
         pst.setString(2, password.getText().toLowerCase());
         rs = pst.executeQuery(); //QUERY EXECUTION
-        System.out.println(password.getText());
+//        System.out.println(password.getText());
         if (user_name.getText().equals("") && password.getText().equals("")) { //IF NO INPUT IS DETECTED
             a = new Alert(Alert.AlertType.WARNING);
             a.setContentText(" PLEASE FILL IN BOTH THE FIELDS PLEASE! ");
@@ -67,13 +80,7 @@ public class HelloController {
             password.setText("");// SETTING THE TEXT-FIELD TO NULL (CLEARING)
         } else if (rs.next()) { //IF ACTUALLY THE FORM IS FILLED
             String role_of_user = rs.getString("role"); //GET THE ROLE OF THAT USER
-//            String role = "SELECT role FROM login_role where USER_NAME=? and PASSWORD=?";
-//            pst = con.prepareStatement(role);
-//            pst.setString(1, user_name.getText());
-//            pst.setString(2,  password.getText());
-//            rs = pst.executeQuery();
-//            String role_of_user = rs.getString("role");
-            System.out.println("AFTER RESULT SET IS TURE");
+//            System.out.println("AFTER RESULT SET IS TURE");
             System.out.println(role_of_user);
             String doc = "doctor";
             String nur = "nurse";
@@ -112,7 +119,7 @@ public class HelloController {
     @FXML
     void login(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         this.let();
-        System.out.println(return_value);// FOR DEV
+//        System.out.println(return_value);// FOR DEV
     if(return_value==1){
         FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("doc-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -169,7 +176,7 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();}
     else{
-       System.out.println("just stop");}
+       System.out.println(" NO SUCH PAGE (FAIL)");}
 
 //        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("doc-page.fxml")));
 //        scene = new Scene(root);

@@ -58,6 +58,7 @@ public class DoctorController {
         FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("patient-table-page.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
         stage.setTitle(" PATIENT RECORD PAGE ");
         stage.setScene(scene);
         stage.show();

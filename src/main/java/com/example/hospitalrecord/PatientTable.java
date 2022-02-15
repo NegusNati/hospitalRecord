@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -60,7 +61,7 @@ public class PatientTable implements Initializable {
     private TableColumn<searchClass, String>moneyDue;
 
     ObservableList<searchClass> patientTable = FXCollections.observableArrayList();
-
+    Alert a;
     @FXML
     void back(ActionEvent event) throws IOException {
         FXMLLoader fxmlBack = new FXMLLoader(HospitalRecord.class.getResource("hello-view.fxml"));
@@ -97,9 +98,9 @@ public class PatientTable implements Initializable {
 
                 // POPULATE THE OBSERVABLE LIST
                 patientTable.add(new searchClass(First,Last,Ident,Card,Ag,Se,Contact,ADate,ATime,Sta,Money));
-                System.out.println(" populated ");
+//                System.out.println(" populated ");
             }
-            System.out.println(" set to it ");
+//            System.out.println(" set to it ");
             firstName.setCellValueFactory(new PropertyValueFactory<>("fname"));
             lastName.setCellValueFactory(new PropertyValueFactory<>("lname"));
             id.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -159,6 +160,9 @@ public class PatientTable implements Initializable {
             // after dynamic search, the sorted data is displayed
             tbl.setItems(sortedData);
         } catch (ClassNotFoundException | SQLException e) {
+            a = new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText(" NO PATIENT ADDED TO THE SYSTEM !! ");
+            a.showAndWait();
             e.printStackTrace();
         }
 

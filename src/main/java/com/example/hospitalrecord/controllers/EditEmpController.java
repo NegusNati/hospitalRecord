@@ -67,21 +67,20 @@ public class EditEmpController {
     public void updateEmpMethod() throws ClassNotFoundException {
         try{
             Jdbc database = new Jdbc();// DATABASE CLASS
-        con = database.connMethod(); // CREATING A CONNECTION
-        System.out.println("AFTER CONNECTION IS CREATED");
-        String dateFromDataBase ="SELECT * FROM EMPLOYEE WHERE EMPLOYEEID ='"+id.getText()+"'";
-        Statement stt = con.createStatement();
-        ResultSet rr = stt.executeQuery(dateFromDataBase);
-            rr.next();
+            con = database.connMethod(); // CREATING A CONNECTION
+//             System.out.println("AFTER CONNECTION IS CREATED");
+            String dateFromDataBase ="SELECT * FROM EMPLOYEE WHERE EMPLOYEEID ='"+id.getText()+"'";
+            Statement stt = con.createStatement();
+            ResultSet rr = stt.executeQuery(dateFromDataBase);
+            rr.next(); //LIFE THE POINTER TO 1 FROM 0
             String pastDate = rr.getString("DATEOFHIRE");
             String pastSex = rr.getString("SEX");
-            System.out.println(pastSex);
+//            System.out.println(pastSex);
 
-        System.out.println(" date and time ");
+//        System.out.println(" date and time ");
         String sql = "UPDATE EMPLOYEE SET firstName = '"+firstName.getText()+"',lastName ='"+lastName.getText()+"',sex ='"+pastSex+"',age = '"+age.getText()+"',contactNumber ='"+contactNumber.getText()+"',DATEOFHIRE = '"+pastDate+"',email = '"+email.getText()+"',role ='"+role.getText()+"',SPECIALIZATION ='"+special.getText()+"', AVAILABILITY ='"+availablity.getText()+"',salary ='"+salary.getText()+"' WHERE  EMPLOYEEID= '"+id.getText()+"'";
         PreparedStatement ptst = con.prepareStatement(sql);
-
-        System.out.println(" before ex ");
+//        System.out.println(" before ex ");
 
 // Validation
         String fn = firstName.getText().toString();
@@ -126,9 +125,9 @@ public class EditEmpController {
             b.showAndWait();}
 
         else {
-            System.out.println("ELSE  ex ");
+//            System.out.println("ELSE  ex ");
             ptst.executeQuery();
-            System.out.println("AFTER ex ");
+//            System.out.println("AFTER ex ");
             a = new Alert(Alert.AlertType.INFORMATION);
             a.setContentText(" EMPLOYEE DATA UPDATED SUCCESSFULLY!! ");
             a.showAndWait();

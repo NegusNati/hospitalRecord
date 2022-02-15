@@ -69,7 +69,7 @@ public class DocForPatient implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("patient-page.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle(" PATIENT PAGE ");
+        stage.setTitle(" PATIENT (CUSTOMER) PAGE  ");
         stage.setScene(scene);
         stage.show();
 
@@ -77,8 +77,6 @@ public class DocForPatient implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String query = "SELECT FIRSTNAME,LASTNAME,SEX,CONTACTNUMBER,EMAIL,SPECIALIZATION,AVAILABILITY,EMPLOYEEID FROM EMPLOYEE where ROLE = 'DOC'";
-
-
 
         try{
             Jdbc database = new Jdbc();
@@ -88,7 +86,6 @@ public class DocForPatient implements Initializable {
             while (rs.next()){
                 String First = rs.getString("FIRSTNAME");
                 String Last = rs.getString("LASTNAME");
-
                 String sss = rs.getString("SEX");
                 String Contact = rs.getString("CONTACTNUMBER");
                 String eee = rs.getString("EMAIL");
@@ -99,9 +96,9 @@ public class DocForPatient implements Initializable {
 
                 // POPULATE THE OBSERVABLE LIST
                 DocTableobservableList.add(new SearchDoc(First,Last,sss,Contact,eee,Sta,availll,Ident));
-                System.out.println(" populated ");
+//                System.out.println(" populated ");
             }
-            System.out.println(" set to it ");
+//            System.out.println(" set to it ");
             firstName.setCellValueFactory(new PropertyValueFactory<>("fname1"));
             lastName.setCellValueFactory(new PropertyValueFactory<>("lname1"));
             sex.setCellValueFactory(new PropertyValueFactory<>("sexx1"));
@@ -113,18 +110,15 @@ public class DocForPatient implements Initializable {
 
 // set the items from the observable list to the table
             tbl.setItems(DocTableobservableList);
-            System.out.println(" after table insert ");
+//            System.out.println(" after table insert ");
             // now lets use the FilteredList class for our Dynamic search.
             //intalize here
             FilteredList<SearchDoc> fileterdListTableForDoc = new FilteredList<>(DocTableobservableList, b -> true);
-
             //use our textfield data to search
             searchTextField.textProperty().addListener((observable, oldValue , newValue) -> {
                 fileterdListTableForDoc.setPredicate(SearchDoc -> {
-
                     if ( newValue.isEmpty() || newValue.isBlank() ||newValue == null){
-                        return true;
-                    }
+                        return true;}
                     String searchKey = newValue.toLowerCase();
                     if(SearchDoc.getFname1().toLowerCase().indexOf(searchKey) > -1 ){
                         return true;
@@ -150,18 +144,11 @@ public class DocForPatient implements Initializable {
             SortedList<SearchDoc> sortedData2 = new SortedList<>(fileterdListTableForDoc);
             //bind sorted result with our table view
             sortedData2.comparatorProperty().bind(tbl.comparatorProperty());
-
             // after dynamic search, the sorted data is displayed
-            tbl.setItems(sortedData2);
-
-
-
-        }catch(Exception e){
-            a = new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText(" NO 'DOC' ADDED TO THE SYSTEM !! ");
-            a.showAndWait();
-            e.printStackTrace();
-        }
-
-    }
+            tbl.setItems(sortedData2);} catch(Exception e){
+                a = new Alert(Alert.AlertType.INFORMATION);
+                a.setContentText(" NO 'DOC' ADDED TO THE SYSTEM !! ");
+                a.showAndWait();
+                e.printStackTrace();
+        }}
 }

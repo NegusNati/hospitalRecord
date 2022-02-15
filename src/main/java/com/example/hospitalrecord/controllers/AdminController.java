@@ -66,14 +66,7 @@ public class AdminController {
         System.out.println("AFTER CONNECTION IS CREATED");
         stage.setTitle(" UPDATE EMPLOYEE PAGE ");
         stage.setScene(scene2);
-        stage.show();
-//        FXMLLoader LL = new FXMLLoader(HospitalRecord.class.getResource("editEmp-page.fxml"));
-//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        Scene scene = new Scene(LL.load());
-//        stage.setTitle(" UPDATE AN EMPLOYEE PAGE ");
-//        stage.setScene(scene);
-//        stage.show();
-    }
+        stage.show();}
 
 
     @FXML
@@ -82,6 +75,7 @@ public class AdminController {
         FXMLLoader fxa = new FXMLLoader(HospitalRecord.class.getResource("empTable-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxa.load());
+        stage.setResizable(false);
         stage.setTitle(" EMPLOYEE RECORD PAGE");
         stage.setScene(scene);
         stage.show();
@@ -94,6 +88,7 @@ public class AdminController {
         FXMLLoader fxa = new FXMLLoader(HospitalRecord.class.getResource("patient-table-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxa.load());
+        stage.setResizable(false);
         stage.setTitle(" PATIENT RECORD PAGE");
         stage.setScene(scene);
         stage.show();

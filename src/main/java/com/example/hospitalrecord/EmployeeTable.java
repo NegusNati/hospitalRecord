@@ -13,10 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -31,6 +28,7 @@ public class EmployeeTable implements Initializable {
     private Parent root;
     private Stage stage;
     private Scene scene;
+    Alert a;
     @FXML
     private TableColumn<EmpSearchClass, String> age;
 
@@ -117,9 +115,9 @@ public class EmployeeTable implements Initializable {
 
                 // POPULATE THE OBSERVABLE LIST
                 employeeTableobservableList.add(new EmpSearchClass(First,Last,sss,Ag,Contact,ADate,eee,roro,Sta,availll,Ident,sallll));
-                System.out.println(" populated ");
+//                System.out.println(" populated ");
             }
-            System.out.println(" set to it ");
+//            System.out.println(" set to it ");
             firstName.setCellValueFactory(new PropertyValueFactory<>("fname"));
             lastName.setCellValueFactory(new PropertyValueFactory<>("lname"));
             sex.setCellValueFactory(new PropertyValueFactory<>("sexx"));
@@ -135,7 +133,6 @@ public class EmployeeTable implements Initializable {
 
 // set the items from the observable list to the table
             tbl.setItems(employeeTableobservableList);
-            System.out.println(" after table insert ");
             // now lets use the FilteredList class for our Dynamic search.
             //intalize here
             FilteredList<EmpSearchClass> fileterdListTableForEmp = new FilteredList<>(employeeTableobservableList, b -> true);
@@ -183,11 +180,10 @@ public class EmployeeTable implements Initializable {
 
             // after dynamic search, the sorted data is displayed
             tbl.setItems(sortedData1);
-
-
-
         }catch(Exception e){
-
+            a = new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText(" NO EMPLOYEE ADDED TO THE SYSTEM !! ");
+            a.showAndWait();
             e.printStackTrace();
         }
 

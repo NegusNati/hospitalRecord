@@ -83,9 +83,10 @@ public class addEmpController implements Initializable {
     public void addEmpMethod() throws ClassNotFoundException, SQLException {
         Jdbc database = new Jdbc();// DATABASE CLASS
         con = database.connMethod(); // CREATING A CONNECTION
-        System.out.println("AFTER CONNECTION IS CREATED");
+//        System.out.println("AFTER CONNECTION IS CREATED");
         String d =dateMain;
-        System.out.println(" date and time ");
+//        System.out.println(" date and time ");
+        s = String.valueOf(sexComboBox.getValue());
         String sql = "INSERT INTO EMPLOYEE values ( ?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ptst = con.prepareStatement(sql);
         ptst.setString(1, firstName.getText());
@@ -100,7 +101,7 @@ public class addEmpController implements Initializable {
         ptst.setString(10, availablity.getText());
         ptst.setString(11, id.getText());
         ptst.setString(12, salary.getText());
-        System.out.println(" before ex ");
+//        System.out.println(" before ex ");
 
 // Validation
         String fn = firstName.getText().toString();
@@ -151,9 +152,9 @@ public class addEmpController implements Initializable {
             b.showAndWait();}
 
         else {
-            System.out.println("ELSE  ex ");
+//            System.out.println("ELSE  ex ");
             ptst.executeQuery();
-            System.out.println("AFTER ex ");
+//            System.out.println("AFTER ex ");
             a = new Alert(Alert.AlertType.INFORMATION);
             a.setContentText(" EMPLOYEE DATA INSERTED SUCCESSFULLY!! ");
             a.showAndWait();
@@ -175,9 +176,5 @@ public class addEmpController implements Initializable {
         stage.setTitle("ADMIN PAGE");
         stage.setScene(scene);
         stage.show();
-
-
     }
-
-
 }

@@ -22,27 +22,20 @@ public class HospitalRecord extends Application {
     public static String timeMain;
     @Override
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle(" HOSPITAL RECORD MANAGMENT SYSTEM");
         stage.setScene(scene);
-        stage.show();
-    }
-
-
+        stage.show();}
 
     public static void main(String[] args) {
         Date date = new Date();
 //        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd ");
-        System.out.println(java.time.LocalDate.now());
         dateMain = String.valueOf(java.time.LocalDate.now());
         SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm aa");
-        String time = formatTime.format(
-                date);
-        System.out.println(time);
+        String time = formatTime.format(date);
         timeMain = time;
 
-        launch(args);
-
-    }
+        launch(args);}
 }

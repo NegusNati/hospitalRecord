@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalrecord.controllers.PatientController">
+   <children>
+      <Label fx:id="label_doc" layoutX="76.0" layoutY="45.0" prefHeight="86.0" prefWidth="191.0" stylesheets="@style.css" text="PATIENT PAGE">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_home" layoutX="53.0" layoutY="354.0" mnemonicParsing="false" onAction="#home" text="BACK" />
+      <Button fx:id="view_patient" layoutX="350.0" layoutY="131.0" mnemonicParsing="false" onAction="#viewDoc" prefHeight="62.0" prefWidth="164.0" text="VIEW DOCTOR INFO" />
+   </children>
+</AnchorPane>

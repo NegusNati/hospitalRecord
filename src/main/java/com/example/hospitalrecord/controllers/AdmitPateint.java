@@ -78,7 +78,7 @@ public class AdmitPateint implements Initializable {
         sexComboBox.setItems(FXCollections.observableArrayList("MALE","FEMALE"));
         date.setText(dateMain);
         time.setText(timeMain);
-        s = String.valueOf(sexComboBox.getValue());
+//        s = String.valueOf(sexComboBox.getValue());
     }
 
     public void sqlMethod1() throws ClassNotFoundException, SQLException {
@@ -87,7 +87,8 @@ public class AdmitPateint implements Initializable {
         System.out.println("AFTER CONNECTION IS CREATED");
          String t= timeMain;
          String d =dateMain;
-        System.out.println(" date and time ");
+//        System.out.println(" gotten date and time ");
+        s = String.valueOf(sexComboBox.getValue());
         String sql = "INSERT INTO patient values ( ?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ptst = con.prepareStatement(sql);
         ptst.setString(1, firstName.getText());
@@ -101,7 +102,7 @@ public class AdmitPateint implements Initializable {
         ptst.setString(9, t);
         ptst.setString(10, status.getText());
         ptst.setString(11, moneyDue.getText());
-        System.out.println(" before ex ");
+//        System.out.println(" before ex ");
 
 // Validation
         String fn = firstName.getText().toString();
@@ -114,13 +115,14 @@ public class AdmitPateint implements Initializable {
 
         String cno = contactNumber.getText().toString();
         String sta = status.getText().toString();
+
         b = new Alert(Alert.AlertType.INFORMATION);
 
         if(i.equals("")){
             b.setContentText("ID IS MANDATORY, PLEASE INSERT AGAIN ");
             b.showAndWait();}
         else if(fn.equals("")){
-            b.setContentText("NAME IS MANDATORY, PLEASE INSERT AGAIN ");
+            b.setContentText("FIRST NAME IS MANDATORY, PLEASE INSERT AGAIN ");
             b.showAndWait(); }
         else if(ln.equals("")){
             b.setContentText("LAST NAME IS MANDATORY, PLEASE INSERT AGAIN");
@@ -135,7 +137,7 @@ public class AdmitPateint implements Initializable {
             b.setContentText("CARD NUMBER IS MANDATORY, PLEASE INSERT AGAIN");
             b.showAndWait();}
         else if(md.equals("")){
-            moneyDue.setText("00.00");}
+            moneyDue.setText("00");}
         else if(sta.equals("")){
             status.setText(" UNDIAGNOSED  ");}
         else if((!Pattern.matches("^[0-9]*$", cno))||(cno.length()!=10)){
@@ -153,10 +155,12 @@ public class AdmitPateint implements Initializable {
         else if(!Pattern.matches("^[0-9]*$", cn)){
             b.setContentText(" CARD NUMBER EITHER INCLUDE CHARACTER OR SYMBOLS,PLEASE INSERT AGAIN");
             b.showAndWait();}
+        else if(!Pattern.matches("^[0-9]*$", md)){
+            b.setContentText(" MONEY-DUE EITHER INCLUDE CHARACTER OR SYMBOLS ,PLEASE INSERT AGAIN");
+            b.showAndWait();}
 
         else {
         ptst.executeQuery();
-        System.out.println("AFTER ex ");
         a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText(" PATIENT DATA INSERTED SUCCESSFULLY!! ");
         a.showAndWait();
@@ -167,7 +171,6 @@ public class AdmitPateint implements Initializable {
     @FXML
     void admit(ActionEvent event) throws SQLException, ClassNotFoundException {
         sqlMethod1();
-
     }
 
     @FXML

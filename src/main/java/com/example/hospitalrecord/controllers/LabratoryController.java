@@ -55,7 +55,7 @@ public class LabratoryController {
     void patient(ActionEvent event) throws IOException {
         FXMLLoader ff = new FXMLLoader(HospitalRecord.class.getResource("patient-table-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(ff.load(),1100,600);
+        Scene scene = new Scene(ff.load(),1100,620);
         stage.setResizable(false);
         stage.setTitle("PATIENT DETAIL TABLE PAGE");
         stage.setScene(scene);
