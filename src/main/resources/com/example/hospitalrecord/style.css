@@ -69,7 +69,7 @@ Label{
 
 #lol {
  -fx-linear-gradient(#FFF8DC, #243b55);
- -fx-font-family:@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 -fx-text-align: center;
 -fx-text-decoration: none;
  -fx-display: inline-block;
