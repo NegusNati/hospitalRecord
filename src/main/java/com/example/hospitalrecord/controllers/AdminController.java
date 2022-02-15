@@ -89,8 +89,14 @@ public class AdminController {
     }
 
     @FXML
-    void viewPatient(ActionEvent event) {
+    void viewPatient(ActionEvent event) throws IOException {
 
+        FXMLLoader fxa = new FXMLLoader(HospitalRecord.class.getResource("patient-table-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxa.load());
+        stage.setTitle(" PATIENT RECORD PAGE");
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

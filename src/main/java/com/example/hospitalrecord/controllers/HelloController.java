@@ -81,6 +81,7 @@ public class HelloController {
             String lab = "lab";
             String record = "record";
             String pharma = "pharma";
+            String patient1 = "patient";
 
             if (doc.equals(role_of_user)) { // FOR DOCTOR CASE
                 return_value = 1; // CHANGE THE GLOBAL VARIABLE TO 1
@@ -94,7 +95,10 @@ public class HelloController {
                 return_value = 5;
             } else if (role_of_user.equals(record)){
                 return_value = 6;
+            }else if (role_of_user.equals(patient1)){
+                return_value = 7;
             }else { //IF THERE IS NO USER LIKE THAT OR JUST ONE FIELD IS INCORRECT
+
                 System.out.println("no privilage");}} else {
                         a = new Alert(Alert.AlertType.WARNING);
                         a.setContentText(" INCORRECT USER NAME OR/AND PASSWORD ");
@@ -154,6 +158,14 @@ public class HelloController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("RECORD OFFICE PAGE ");
+        stage.setScene(scene);
+        stage.show();}
+    else if (return_value==7) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HospitalRecord.class.getResource("patient-page.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle(" PATIENT (CUSTOMER) PAGE ");
         stage.setScene(scene);
         stage.show();}
     else{

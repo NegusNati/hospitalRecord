@@ -104,7 +104,6 @@ public class EmployeeTable implements Initializable {
             while (rs.next()){
                 String First = rs.getString("FIRSTNAME");
                 String Last = rs.getString("LASTNAME");
-
                 String sss = rs.getString("SEX");
                 String Ag = rs.getString("AGE");
                 String Contact = rs.getString("CONTACTNUMBER");
@@ -143,7 +142,7 @@ public class EmployeeTable implements Initializable {
 
            //use our textfield data to search
             searchTextField.textProperty().addListener((observable, oldValue , newValue) -> {
-                fileterdListTableForEmp.setPredicate(searchClass -> {
+                fileterdListTableForEmp.setPredicate(EmpSearchClass -> {
 
                     if ( newValue.isEmpty() || newValue.isBlank() ||newValue == null){
                         return true;

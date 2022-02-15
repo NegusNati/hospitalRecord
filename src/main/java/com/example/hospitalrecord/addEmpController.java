@@ -132,8 +132,6 @@ public class addEmpController implements Initializable {
             b.showAndWait();}
         else if(md.equals("")){
             email.setText(" NOT PROVIDED ");}
-        else if(s.equals("")){
-            email.setText(" NOT PROVIDED ");}
         else if(sta.equals("")){
             availablity.setText(" ACTIVE ");}
         else if((!Pattern.matches("^[0-9]*$", cno))||(cno.length()!=10)){

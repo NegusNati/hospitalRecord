@@ -1,35 +1,35 @@
 package com.example.hospitalrecord.controllers;
 
 public class EmpSearchClass {
-    static String fname;
-    static String lname;
-    static String sexx;
-    static String agee;
-    static String connumber;
-    static String dateofh;
-    static String ema;
-    static String ro;
-    static String spec;
-    static String avail;
-    static String empi;
-    static String salary1;
+     String fname;
+     String lname;
+     String sexx;
+     String agee;
+     String connumber;
+     String dateofh;
+     String ema;
+     String ro;
+     String spec;
+     String avail;
+     String empi;
+     String salary1;
 
     public EmpSearchClass(String fname, String lname, String sexx, String agee, String connumber, String dateofh, String ema, String ro, String spec, String avail, String empi, String salary1) {
-        EmpSearchClass.fname = fname;
-        EmpSearchClass.lname = lname;
-        EmpSearchClass.sexx = sexx;
-        EmpSearchClass.agee = agee;
-        EmpSearchClass.connumber = connumber;
-        EmpSearchClass.dateofh = dateofh;
-        EmpSearchClass.ema = ema;
-        EmpSearchClass.ro = ro;
-        EmpSearchClass.spec = spec;
-        EmpSearchClass.avail = avail;
-        EmpSearchClass.empi = empi;
-        EmpSearchClass.salary1 = salary1;
+        this.fname = fname;
+        this.lname = lname;
+        this.sexx = sexx;
+        this.agee = agee;
+        this.connumber = connumber;
+        this.dateofh = dateofh;
+        this.ema = ema;
+        this.ro = ro;
+        this.spec = spec;
+        this.avail = avail;
+        this.empi = empi;
+        this.salary1 = salary1;
     }
 
-    public static String getFname() {
+    public String getFname() {
         return fname;
     }
 
@@ -37,7 +37,7 @@ public class EmpSearchClass {
         this.fname = fname;
     }
 
-    public static String getLname() {
+    public String getLname() {
         return lname;
     }
 
@@ -45,7 +45,7 @@ public class EmpSearchClass {
         this.lname = lname;
     }
 
-    public static String getSexx() {
+    public String getSexx() {
         return sexx;
     }
 
@@ -53,7 +53,7 @@ public class EmpSearchClass {
         this.sexx = sexx;
     }
 
-    public static String getAgee() {
+    public String getAgee() {
         return agee;
     }
 
@@ -61,7 +61,7 @@ public class EmpSearchClass {
         this.agee = agee;
     }
 
-    public static String getConnumber() {
+    public String getConnumber() {
         return connumber;
     }
 
@@ -69,7 +69,7 @@ public class EmpSearchClass {
         this.connumber = connumber;
     }
 
-    public static String getDateofh() {
+    public String getDateofh() {
         return dateofh;
     }
 
@@ -77,7 +77,7 @@ public class EmpSearchClass {
         this.dateofh = dateofh;
     }
 
-    public static String getEma() {
+    public String getEma() {
         return ema;
     }
 
@@ -85,7 +85,7 @@ public class EmpSearchClass {
         this.ema = ema;
     }
 
-    public static String getRo() {
+    public String getRo() {
         return ro;
     }
 
@@ -93,7 +93,7 @@ public class EmpSearchClass {
         this.ro = ro;
     }
 
-    public static String getSpec() {
+    public String getSpec() {
         return spec;
     }
 
@@ -101,7 +101,7 @@ public class EmpSearchClass {
         this.spec = spec;
     }
 
-    public static String getAvail() {
+    public String getAvail() {
         return avail;
     }
 
@@ -109,7 +109,7 @@ public class EmpSearchClass {
         this.avail = avail;
     }
 
-    public static String getEmpi() {
+    public String getEmpi() {
         return empi;
     }
 
@@ -117,7 +117,7 @@ public class EmpSearchClass {
         this.empi = empi;
     }
 
-    public static String getSalary1() {
+    public String getSalary1() {
         return salary1;
     }
 
