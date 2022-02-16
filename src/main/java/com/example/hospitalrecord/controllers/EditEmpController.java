@@ -90,6 +90,7 @@ public class EditEmpController {
         String cno = contactNumber.getText().toString();
         String sta = availablity.getText().toString();
         String salar = salary.getText().toString();
+        String emailValid = email.getText().toString();
         b = new Alert(Alert.AlertType.INFORMATION);
 
          if(fn.equals("")){
@@ -117,9 +118,12 @@ public class EditEmpController {
         else if(!Pattern.matches("[a-zA-Z]+", ln)){
             b.setContentText(" LAST NAME INCLUDE NUMBER OR SYMBOLS,PLEASE INSERT AGAIN");
             b.showAndWait();}
-        else if(!Pattern.matches("^[0-9]*$", ag)){
-            b.setContentText(" AGE EITHER INCLUDE CHARACTER OR SYMBOLS ,PLEASE INSERT AGAIN");
-            b.showAndWait();}
+         else if(!Pattern.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", emailValid)){
+             b.setContentText(" INCORRECT TYPE OF EMAIL ,PLEASE INSERT AGAIN");
+             b.showAndWait();}
+         else if((!Pattern.matches("^[0-9]*$", ag))||(ag.length() != 2)){
+             b.setContentText(" AGE EITHER INCLUDE CHARACTER OR SYMBOLS ,PLEASE INSERT AGAIN VALUES BETWEEN 10 -99");
+             b.showAndWait();}
         else if(!Pattern.matches("^[0-9]*$", salar)){
             b.setContentText(" SALARY EITHER INCLUDE CHARACTER OR SYMBOLS,PLEASE INSERT AGAIN");
             b.showAndWait();}

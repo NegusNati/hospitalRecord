@@ -71,7 +71,7 @@ public class AdmitPateint implements Initializable {
     @FXML
     private TextField time;
 
-    int condition;
+    int condition = 2;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
