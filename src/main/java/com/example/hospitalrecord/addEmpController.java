@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
@@ -79,12 +80,13 @@ public class addEmpController implements Initializable {
         date.setText(dateMain);
         s = String.valueOf(sexComboBox.getValue());
     }
-
+    int condition ;
     public void addEmpMethod() throws ClassNotFoundException, SQLException {
         Jdbc database = new Jdbc();// DATABASE CLASS
         con = database.connMethod(); // CREATING A CONNECTION
 //        System.out.println("AFTER CONNECTION IS CREATED");
         String d =dateMain;
+        b = new Alert(Alert.AlertType.INFORMATION);
 //        System.out.println(" date and time ");
         s = String.valueOf(sexComboBox.getValue());
         String sql = "INSERT INTO EMPLOYEE values ( ?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -102,6 +104,21 @@ public class addEmpController implements Initializable {
         ptst.setString(11, id.getText());
         ptst.setString(12, salary.getText());
 //        System.out.println(" before ex ");
+ // check for similar id
+        String query = "SELECT * FROM EMPLOYEE";
+        Connection cons = database.connMethod();
+        Statement stmts = cons.createStatement();
+        ResultSet rss = stmts.executeQuery(query);
+        while (rss.next()){
+            String iii = rss.getString("EMPLOYEEID");
+            System.out.println(iii);
+            if( iii.equals(id.getText())){
+               condition = 1;
+//               System.out.println(" 000 ");
+            }else{
+                System.out.println(" 2 ");}
+        }
+
 
 // Validation
         String fn = firstName.getText().toString();
@@ -114,7 +131,7 @@ public class addEmpController implements Initializable {
         String cno = contactNumber.getText().toString();
         String sta = availablity.getText().toString();
         String salar = salary.getText().toString();
-        b = new Alert(Alert.AlertType.INFORMATION);
+
 
         if(i.equals("")){
             b.setContentText("EMPLOYEE ID IS MANDATORY, PLEASE INSERT AGAIN ");
@@ -135,6 +152,9 @@ public class addEmpController implements Initializable {
             email.setText(" NOT PROVIDED ");}
         else if(sta.equals("")){
             availablity.setText(" ACTIVE ");}
+        else if(condition == 1){
+            b.setContentText("EMPLOYEE WITH SIMILAR ID IS ALREADY IN THE SYSTEM, PLEASE INSERT AGAIN");
+            b.showAndWait(); }
         else if((!Pattern.matches("^[0-9]*$", cno))||(cno.length()!=10)){
             b.setContentText("PHONE NUMBER EITHER INCLUDE CHARACTER OR IS ABOVE OR LESS THAN 10 DIGITS,PLEASE INSERT AGAIN, use the format 0911****** ");
             b.showAndWait();}

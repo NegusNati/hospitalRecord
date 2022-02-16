@@ -71,7 +71,7 @@ public class AdmitPateint implements Initializable {
     @FXML
     private TextField time;
 
-
+    int condition;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -104,6 +104,19 @@ public class AdmitPateint implements Initializable {
         ptst.setString(11, moneyDue.getText());
 //        System.out.println(" before ex ");
 
+        String query = "SELECT * FROM patient";
+        Connection cons = database.connMethod();
+        Statement stmts = cons.createStatement();
+        ResultSet rss = stmts.executeQuery(query);
+        while (rss.next()){
+            String iii = rss.getString("CARDNUMBER");
+//            System.out.println(iii);
+            if( iii.equals(cardNumber.getText())){
+                condition = 1;
+//               System.out.println(" 000 ");
+            }else{
+                System.out.println(" 2 ");}
+        }
 // Validation
         String fn = firstName.getText().toString();
         String ln = lastName.getText().toString();
@@ -140,6 +153,9 @@ public class AdmitPateint implements Initializable {
             moneyDue.setText("00");}
         else if(sta.equals("")){
             status.setText(" UNDIAGNOSED  ");}
+        else if(condition == 1){
+            b.setContentText("EMPLOYEE WITH SIMILAR CARDNUMBER IS ALREADY IN THE SYSTEM, PLEASE INSERT AGAIN");
+            b.showAndWait(); }
         else if((!Pattern.matches("^[0-9]*$", cno))||(cno.length()!=10)){
             b.setContentText("PHONE NUMBER EITHER INCLUDE CHARACTER OR IS ABOVE OR LESS THAN 10 DIGITS,PLEASE INSERT AGAIN, use the format 0911****** ");
             b.showAndWait();}

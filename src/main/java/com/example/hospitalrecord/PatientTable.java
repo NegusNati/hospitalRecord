@@ -114,7 +114,7 @@ public class PatientTable implements Initializable {
             moneyDue.setCellValueFactory(new PropertyValueFactory<>("modue"));
 // set the items from the observable list to the table
             tbl.setItems(patientTable);
-            System.out.println(" after table insert ");
+//            System.out.println(" after table insert ");
             // now lets use the FilteredList class for our Dynamic search.
             //intalize here
             FilteredList<searchClass> fileterdListTable = new FilteredList<>(patientTable, b -> true);
