@@ -14,3 +14,8 @@
 3. A code editor 
 4. And just Clone the Repository 
 
+Home page will be -
+
+![](src/main/resources/gitPic.PNG)
+
+then you will have to configure a LoginTable so that users role could be identified... 
