@@ -2,7 +2,7 @@
 
 # Hospital Record Managment System
 
- A project of 'Advanced Programing" course that is submitted to Mr. Habatmu (MSc) that is done using Java Programin language. 
+ A project of 'Advanced Programing" course that is submitted to Mr. Habatmu (MSc) that is done using Java Programin language (specifically using JavaFX application framework). 
 
  This project is a compact and simple Hospital Record Managemnt System that can be used by small to medium Clinics and Hopitals 
 
