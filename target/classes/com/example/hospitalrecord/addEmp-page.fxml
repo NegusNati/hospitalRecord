@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospitalrecord.addEmpController">
    <children>
       <Label layoutX="196.0" layoutY="21.0" text="HIRE AN EMPLOYEE" />
@@ -22,7 +21,7 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="495.0">
                <children>
-                  <TextField fx:id="id" prefHeight="38.0" prefWidth="250.0" promptText="Employee ID" />
+                  <TextField fx:id="id" prefHeight="38.0" prefWidth="250.0" promptText="Employee ID(Ii.e 0001)" />
                   <TextField fx:id="role" layoutX="258.0" layoutY="10.0" prefHeight="38.0" prefWidth="250.0" promptText="Role" stylesheets="@style.css" />
                </children>
             </HBox>
